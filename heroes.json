@@ -70,6 +70,127 @@
     }
   },
 
+    "roles": {
+
+    "adam_warlock": "Strategist",
+
+    "angela": "Vanguard",
+
+    "black_cat": "Duelist",
+
+    "black_panther": "Duelist",
+
+    "black_widow": "Duelist",
+
+    "blade": "Duelist",
+
+    "hulk": "Vanguard",
+
+    "captain_america": "Vanguard",
+
+    "cloak_and_dagger": "Strategist",
+
+    "cyclops": "Duelist",
+
+    "daredevil": "Duelist",
+
+    "deadpool": "Multi-Role",
+
+    "devil_dinosaur": "Vanguard",
+
+    "doctor_strange": "Vanguard",
+
+    "elsa_bloodstone": "Duelist",
+
+    "emma_frost": "Vanguard",
+
+    "gambit": "Strategist",
+
+    "groot": "Vanguard",
+
+    "hawkeye": "Duelist",
+
+    "hela": "Duelist",
+
+    "human_torch": "Duelist",
+
+    "invisible_woman": "Strategist",
+
+    "iron_fist": "Duelist",
+
+    "iron_man": "Duelist",
+
+    "jeff_the_land_shark": "Strategist",
+
+    "loki": "Strategist",
+
+    "luna_snow": "Strategist",
+
+    "magik": "Duelist",
+
+    "magneto": "Vanguard",
+
+    "mantis": "Strategist",
+
+    "mister_fantastic": "Duelist",
+
+    "moon_knight": "Duelist",
+
+    "namor": "Duelist",
+
+    "peni_parker": "Vanguard",
+
+    "phoenix": "Duelist",
+
+    "psylocke": "Duelist",
+
+    "rocket_raccoon": "Strategist",
+
+    "rogue": "Vanguard",
+
+    "scarlet_witch": "Duelist",
+
+    "spider_man": "Duelist",
+
+    "squirrel_girl": "Duelist",
+
+    "star_lord": "Duelist",
+
+    "storm": "Duelist",
+
+    "the_punisher": "Duelist",
+
+    "the_thing": "Vanguard",
+
+    "thor": "Vanguard",
+
+    "ultron": "Strategist",
+
+    "venom": "Vanguard",
+
+    "white_fox": "Strategist",
+
+    "winter_soldier": "Duelist",
+
+    "wolverine": "Duelist"
+
+  },
+
+  "roleObjectives": {
+  "Vanguard": {
+    "objective1": "block_damage",
+    "objective2": "kos"
+  },
+  "Duelist": {
+    "objective1": "damage",
+    "objective2": "final_hits"
+  },
+  "Strategist": {
+    "objective1": "healing",
+    "objective2": "ko_assists"
+  }
+},
+
   "heroes": {
   "adam_warlock": {
     "name": "Adam Warlock",

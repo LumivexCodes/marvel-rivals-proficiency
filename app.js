@@ -20,6 +20,9 @@ function populateHeroes(){
 
     Object.entries(data.heroes).forEach(([key, hero])=>{
 
+        hero.id = key;
+
+
         const option =
             document.createElement("option");
 
@@ -96,24 +99,49 @@ function calculateChallengeRewards(hero, rank, stats){
     let rewards = 0;
 
 
-    Object.values(hero.challenges).forEach(challenge=>{
+    const role =
+        data.roles[hero.id];
+
+
+    const objectives =
+        data.roleObjectives[role];
+
+
+
+    Object.values(objectives).forEach(type=>{
 
 
         const value =
-            stats[challenge.type] || 0;
-
-
-        const requirement =
-            challenge[rank];
+            stats[type] || 0;
 
 
 
-        if(requirement > 0){
+        const challenge =
+            Object.values(hero.challenges)
+            .find(challenge =>
+                challenge.type === type
+            );
 
-            rewards +=
-                Math.floor(
-                    value / requirement
-                );
+
+
+        if(challenge){
+
+
+            const requirement =
+                challenge[rank];
+
+
+
+            if(requirement > 0){
+
+
+                rewards +=
+                    Math.floor(
+                        value / requirement
+                    );
+
+
+            }
 
         }
 
@@ -320,10 +348,13 @@ function calculate(){
 
 
 
+    const heroId =
+        document.getElementById("heroSelect").value;
+
+
+
     const hero =
-        data.heroes[
-            document.getElementById("heroSelect").value
-        ];
+        data.heroes[heroId];
 
 
 
@@ -336,8 +367,21 @@ function calculate(){
 
 
 
+
     const rank =
         getRank(level);
+
+
+
+
+
+    const role =
+        data.roles[heroId];
+
+
+
+    const objectives =
+        data.roleObjectives[role];
 
 
 
@@ -347,19 +391,19 @@ function calculate(){
 
 
 
-    stats[
-        document.getElementById("objective1Stat").value
-    ] = Number(
-        document.getElementById("objective1Value").value
-    );
+    stats[objectives.objective1] =
+
+        Number(
+            document.getElementById("objective1Value").value
+        );
 
 
 
-    stats[
-        document.getElementById("objective2Stat").value
-    ] = Number(
-        document.getElementById("objective2Value").value
-    );
+    stats[objectives.objective2] =
+
+        Number(
+            document.getElementById("objective2Value").value
+        );
 
 
 
@@ -411,6 +455,12 @@ function calculate(){
 
 
         <p>
+            Role:
+            <b>${role}</b>
+        </p>
+
+
+        <p>
             Rank:
             <b>${rank.toUpperCase()}</b>
         </p>
@@ -442,7 +492,45 @@ document
     );
 
 
+document
+    .getElementById("heroSelect")
+    .addEventListener("change", function(){
 
+        const heroId = this.value;
+
+        if(!heroId){
+            document.getElementById("objective1Name").textContent = "Auto";
+            document.getElementById("objective2Name").textContent = "Auto";
+            return;
+        }
+
+
+        const role =
+            data.roles[heroId];
+
+
+        const objectives =
+            data.roleObjectives[role];
+
+
+        document.getElementById("objective1Name").textContent =
+            formatObjective(objectives.objective1);
+
+
+        document.getElementById("objective2Name").textContent =
+            formatObjective(objectives.objective2);
+
+    });
+
+
+
+function formatObjective(text){
+
+    return text
+        .replace("_", " ")
+        .replace(/\b\w/g, char => char.toUpperCase());
+
+}
 
 
 loadData();

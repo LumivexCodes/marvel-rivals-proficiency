@@ -40,9 +40,11 @@ Marvel Rivals Proficiency Calculator
             Hero
 
             <select id="heroSelect">
+
                 <option value="">
                     Select Hero
                 </option>
+
             </select>
 
         </label>
@@ -104,76 +106,43 @@ Marvel Rivals Proficiency Calculator
         </h2>
 
 
-
-        <label>
-
-            Objective 1
-
-            <select id="objective1Stat">
-
-                <option value="healing">
-                    Healing
-                </option>
-
-                <option value="damage">
-                    Damage
-                </option>
-
-                <option value="block_damage">
-                    Damage Blocked
-                </option>
+        <p>
+            Objectives are automatically selected from the hero role.
+        </p>
 
 
-            </select>
 
-        </label>
-
+        <p>
+            Objective 1:
+            <b id="objective1Name">
+                Auto
+            </b>
+        </p>
 
 
         <input
             id="objective1Value"
             type="number"
-            placeholder="Amount per game"
+            placeholder="Objective 1 amount per game"
         >
 
 
 
 
 
-        <label>
-
-            Objective 2
-
-
-            <select id="objective2Stat">
-
-
-                <option value="final_hits">
-                    Final Hits
-                </option>
-
-
-                <option value="kos">
-                    KOs
-                </option>
-
-
-                <option value="ko_assists">
-                    KO Assists
-                </option>
-
-
-            </select>
-
-
-        </label>
+        <p>
+            Objective 2:
+            <b id="objective2Name">
+                Auto
+            </b>
+        </p>
 
 
 
         <input
             id="objective2Value"
             type="number"
-            placeholder="Amount per game"
+            placeholder="Objective 2 amount per game"
         >
 
 
