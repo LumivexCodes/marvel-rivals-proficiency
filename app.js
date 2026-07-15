@@ -1,5 +1,7 @@
 let data = {};
 
+
+
 async function loadData(){
 
     const response = await fetch("heroes.json");
@@ -8,7 +10,11 @@ async function loadData(){
 
     populateHeroes();
 
+    setupHeroListener();
+
 }
+
+
 
 
 
@@ -18,32 +24,116 @@ function populateHeroes(){
         document.getElementById("heroSelect");
 
 
-    Object.entries(data.heroes).forEach(([key, hero])=>{
+    Object.entries(data.heroes).forEach(([id, hero])=>{
 
-        hero.id = key;
+
+        hero.id = id;
 
 
         const option =
             document.createElement("option");
 
 
-        option.value = key;
+        option.value = id;
 
         option.textContent = hero.name;
 
 
         select.appendChild(option);
 
+
     });
+
 
 }
 
 
 
 
+
+
+function setupHeroListener(){
+
+    document
+    .getElementById("heroSelect")
+    .addEventListener(
+        "change",
+        updateObjectives
+    );
+
+}
+
+
+
+
+
+function updateObjectives(){
+
+    const heroId =
+        document.getElementById("heroSelect").value;
+
+
+
+    if(!heroId){
+
+        document.getElementById("objective1Name").textContent =
+            "Auto";
+
+        document.getElementById("objective2Name").textContent =
+            "Auto";
+
+        return;
+
+    }
+
+
+
+    const role =
+        data.roles[heroId];
+
+
+
+    const objectives =
+        data.roleObjectives[role];
+
+
+
+    document.getElementById("objective1Name").textContent =
+        formatObjective(objectives.objective1);
+
+
+
+    document.getElementById("objective2Name").textContent =
+        formatObjective(objectives.objective2);
+
+
+}
+
+
+
+
+
+function formatObjective(text){
+
+    return text
+    .replaceAll("_"," ")
+    .replace(/\b\w/g,
+        char => char.toUpperCase()
+    );
+
+}
+
+
+
+
+
+
+
 function getRank(level){
 
+
     for(const [rank, info] of Object.entries(data.progression.ranks)){
+
 
         if(
             level >= info.levels[0] &&
@@ -57,13 +147,11 @@ function getRank(level){
     }
 
 
-    if(level >= 20){
+    return "lord";
 
-        return "lord";
-
-    }
 
 }
+
 
 
 
@@ -71,22 +159,30 @@ function getRank(level){
 
 function pointsToReachLevel(level){
 
+
     let total = 0;
+
 
 
     for(let i = 1; i < level; i++){
 
-        const rank = getRank(i);
+
+        const rank =
+            getRank(i);
+
 
 
         total +=
             data.progression.ranks[rank]
             .pointsPerLevel;
 
+
     }
 
 
+
     return total;
+
 
 }
 
@@ -94,13 +190,23 @@ function pointsToReachLevel(level){
 
 
 
-function calculateChallengeRewards(hero, rank, stats){
+
+
+
+function calculateChallengeRewards(
+    hero,
+    rank,
+    stats
+){
+
 
     let rewards = 0;
 
 
+
     const role =
         data.roles[hero.id];
+
 
 
     const objectives =
@@ -108,7 +214,21 @@ function calculateChallengeRewards(hero, rank, stats){
 
 
 
-    Object.values(objectives).forEach(type=>{
+    Object.values(objectives)
+    .forEach(type=>{
+
+
+        const challenge =
+            Object.values(hero.challenges)
+            .find(c =>
+                c.type === type
+            );
+
+
+
+        if(!challenge)
+            return;
+
 
 
         const value =
@@ -116,40 +236,19 @@ function calculateChallengeRewards(hero, rank, stats){
 
 
 
-        const challenge =
-            Object.values(hero.challenges)
-            .find(challenge =>
-                challenge.type === type
+        rewards +=
+            Math.floor(
+                value /
+                challenge[rank]
             );
-
-
-
-        if(challenge){
-
-
-            const requirement =
-                challenge[rank];
-
-
-
-            if(requirement > 0){
-
-
-                rewards +=
-                    Math.floor(
-                        value / requirement
-                    );
-
-
-            }
-
-        }
 
 
     });
 
 
+
     return rewards;
+
 
 }
 
@@ -157,22 +256,31 @@ function calculateChallengeRewards(hero, rank, stats){
 
 
 
-function getPointsPerGame(rank, rewards){
 
-    const rewardData =
+
+
+function getPointsPerGame(
+    rank,
+    rewards
+){
+
+
+    const rankInfo =
         data.ranks[rank];
 
 
+
     return (
-
-        rewardData.usagePoints +
-
+        rankInfo.usagePoints +
         rewards *
-        rewardData.objectivePoints
-
+        rankInfo.objectivePoints
     );
 
+
 }
+
+
+
 
 
 
@@ -180,8 +288,10 @@ function getPointsPerGame(rank, rewards){
 
 function formatTime(minutes){
 
+
     const hours =
         Math.floor(minutes / 60);
+
 
 
     const mins =
@@ -189,16 +299,17 @@ function formatTime(minutes){
 
 
 
-    if(hours === 0){
-
+    if(hours === 0)
         return `${mins}m`;
 
-    }
 
 
     return `${hours}h ${mins}m`;
 
+
 }
+
+
 
 
 
@@ -214,7 +325,6 @@ function createTimeline(
 
 
     const milestones = [
-
         5,
         10,
         15,
@@ -225,14 +335,32 @@ function createTimeline(
         50,
         60,
         70
-
     ];
 
 
 
-    let html = "";
+    let html = `
 
-    let previousLevel = currentLevel;
+    <div class="current-node">
+
+        <div class="dot current"></div>
+
+        <h3>
+            CURRENT
+        </h3>
+
+        <p>
+            LEVEL ${currentLevel}
+        </p>
+
+    </div>
+
+    `;
+
+
+
+    let previousLevel =
+        currentLevel;
 
 
 
@@ -248,7 +376,6 @@ function createTimeline(
 
 
             const pointsNeeded =
-
                 pointsToReachLevel(level)
                 -
                 pointsToReachLevel(previousLevel);
@@ -256,24 +383,11 @@ function createTimeline(
 
 
 
-
-            const games = Math.ceil(
-
-                pointsNeeded /
-                pointsPerGame
-
-            );
-
-
-
-
-            const hours =
-
-                formatTime(
-                    games * 10
+            const games =
+                Math.ceil(
+                    pointsNeeded /
+                    pointsPerGame
                 );
-
-
 
 
 
@@ -292,13 +406,22 @@ function createTimeline(
                 </h3>
 
 
+
                 <p>
 
-                    ${previousLevel} → ${level}
+                    <b>
+                    ${pointsNeeded}
+                    </b>
+                    POINTS
 
-                    <br><br>
+                    <br>
 
-                    ${hours}
+                    ${games}
+                    GAMES
+
+                    <br>
+
+                    ${formatTime(games * 10)}
 
                 </p>
 
@@ -310,7 +433,8 @@ function createTimeline(
 
 
 
-            previousLevel = level;
+            previousLevel =
+                level;
 
 
         }
@@ -322,7 +446,9 @@ function createTimeline(
 
     return html;
 
+
 }
+
 
 
 
@@ -358,11 +484,8 @@ function calculate(){
 
 
 
-    if(!hero || !level || !goal){
-
+    if(!hero || !level || !goal)
         return;
-
-    }
 
 
 
@@ -380,6 +503,8 @@ function calculate(){
 
 
 
+
+
     const objectives =
         data.roleObjectives[role];
 
@@ -392,7 +517,6 @@ function calculate(){
 
 
     stats[objectives.objective1] =
-
         Number(
             document.getElementById("objective1Value").value
         );
@@ -400,7 +524,6 @@ function calculate(){
 
 
     stats[objectives.objective2] =
-
         Number(
             document.getElementById("objective2Value").value
         );
@@ -410,9 +533,7 @@ function calculate(){
 
 
 
-
     const rewards =
-
         calculateChallengeRewards(
             hero,
             rank,
@@ -423,9 +544,7 @@ function calculate(){
 
 
 
-
     const pointsPerGame =
-
         getPointsPerGame(
             rank,
             rewards
@@ -435,10 +554,7 @@ function calculate(){
 
 
 
-
-
     const timeline =
-
         createTimeline(
             level,
             goal,
@@ -449,14 +565,15 @@ function calculate(){
 
 
 
-
     document.getElementById("result")
     .innerHTML = `
 
 
+    <div class="summary">
+
         <p>
             Role:
-            <b>${role}</b>
+            <b>${formatObjective(role)}</b>
         </p>
 
 
@@ -472,7 +589,15 @@ function calculate(){
         </p>
 
 
+    </div>
+
+
+
+    <div id="result">
+
         ${timeline}
+
+    </div>
 
 
     `;
@@ -484,53 +609,17 @@ function calculate(){
 
 
 
-document
-    .getElementById("calculateBtn")
-    .addEventListener(
-        "click",
-        calculate
-    );
+
 
 
 document
-    .getElementById("heroSelect")
-    .addEventListener("change", function(){
-
-        const heroId = this.value;
-
-        if(!heroId){
-            document.getElementById("objective1Name").textContent = "Auto";
-            document.getElementById("objective2Name").textContent = "Auto";
-            return;
-        }
+.getElementById("calculateBtn")
+.addEventListener(
+    "click",
+    calculate
+);
 
 
-        const role =
-            data.roles[heroId];
-
-
-        const objectives =
-            data.roleObjectives[role];
-
-
-        document.getElementById("objective1Name").textContent =
-            formatObjective(objectives.objective1);
-
-
-        document.getElementById("objective2Name").textContent =
-            formatObjective(objectives.objective2);
-
-    });
-
-
-
-function formatObjective(text){
-
-    return text
-        .replace("_", " ")
-        .replace(/\b\w/g, char => char.toUpperCase());
-
-}
 
 
 loadData();
