@@ -1,0 +1,874 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    padding: 25px;
+
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+
+    color: white;
+
+
+    background:
+
+        radial-gradient(
+            circle at top,
+            #54121f 0%,
+            #17060a 35%,
+            #080808 75%
+        );
+
+
+    overflow-x: hidden;
+
+}
+
+
+
+
+
+/* TITLE */
+
+h1 {
+
+    text-align: center;
+
+    margin:
+
+        0 0 30px;
+
+
+    font-size:
+
+        40px;
+
+
+    letter-spacing:
+
+        2px;
+
+
+    color:
+
+        #ff4655;
+
+
+    text-shadow:
+
+        0 0 20px
+        rgba(255,70,85,.9);
+
+
+    animation:
+
+        fadeDown .7s ease;
+
+}
+
+
+
+h1 span {
+
+    display:block;
+
+
+    margin-top:5px;
+
+
+    font-size:
+
+        22px;
+
+
+    color:
+
+        #eee;
+
+
+    letter-spacing:
+
+        5px;
+
+
+}
+
+
+
+
+
+
+
+/* LAYOUT */
+
+
+.container {
+
+
+    max-width:
+
+        1150px;
+
+
+    margin:
+
+        auto;
+
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        1fr 1fr;
+
+
+    gap:
+
+        22px;
+
+
+}
+
+
+
+
+
+
+/* CARDS */
+
+
+.card {
+
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.04)
+        );
+
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.18);
+
+
+
+    border-radius:
+
+        20px;
+
+
+
+    padding:
+
+        22px;
+
+
+
+    backdrop-filter:
+
+        blur(15px);
+
+
+
+    box-shadow:
+
+        0 20px 50px
+        rgba(0,0,0,.45);
+
+
+
+    animation:
+
+        fadeUp .6s ease;
+
+
+    transition:
+
+        .25s ease;
+
+
+}
+
+
+
+.card:hover {
+
+
+    transform:
+
+        translateY(-3px);
+
+
+    border-color:
+
+        rgba(255,70,85,.5);
+
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(255,70,85,.12);
+
+}
+
+
+
+
+.card h2 {
+
+
+    margin:
+
+        0 0 20px;
+
+
+    text-align:
+
+        center;
+
+
+    color:
+
+        #ff4655;
+
+
+    font-size:
+
+        20px;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    letter-spacing:
+
+        1px;
+
+
+}
+
+
+
+
+
+
+
+/* INPUTS */
+
+
+label {
+
+
+    display:
+
+        flex;
+
+
+    align-items:
+
+        center;
+
+
+    justify-content:
+
+        space-between;
+
+
+    gap:
+
+        15px;
+
+
+    margin-bottom:
+
+        14px;
+
+
+    color:
+
+        #ddd;
+
+
+    font-size:
+
+        15px;
+
+
+}
+
+
+
+input,
+select {
+
+
+    width:
+
+        55%;
+
+
+    padding:
+
+        11px;
+
+
+    border-radius:
+
+        10px;
+
+
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.2);
+
+
+
+    background:
+
+        rgba(0,0,0,.45);
+
+
+
+    color:
+
+        white;
+
+
+    outline:
+
+        none;
+
+
+
+    transition:
+
+        .2s;
+
+
+}
+
+
+
+input:hover,
+select:hover {
+
+
+    border-color:
+
+        rgba(255,70,85,.7);
+
+
+}
+
+
+
+input:focus,
+select:focus {
+
+
+    border-color:
+
+        #ff4655;
+
+
+    box-shadow:
+
+        0 0 15px
+        rgba(255,70,85,.5);
+
+
+}
+
+
+
+
+
+option {
+
+    background:
+
+        #111;
+
+}
+
+
+
+
+
+
+/* BUTTON */
+
+
+button {
+
+
+    width:
+
+        100%;
+
+
+    margin-top:
+
+        15px;
+
+
+    padding:
+
+        13px;
+
+
+
+    border:
+
+        none;
+
+
+
+    border-radius:
+
+        12px;
+
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ff4655,
+            #9d0018
+        );
+
+
+
+    color:
+
+        white;
+
+
+
+    font-size:
+
+        16px;
+
+
+
+    font-weight:
+
+        bold;
+
+
+
+    cursor:
+
+        pointer;
+
+
+
+    transition:
+
+        .25s;
+
+
+}
+
+
+
+button:hover {
+
+
+    transform:
+
+        translateY(-3px);
+
+
+    box-shadow:
+
+        0 0 30px
+        rgba(255,70,85,.8);
+
+
+}
+
+
+
+button:active {
+
+
+    transform:
+
+        scale(.97);
+
+
+}
+
+
+
+
+
+
+
+/* TIMELINE */
+
+
+.timeline-card {
+
+    grid-column: span 2;
+
+}
+
+
+
+#result {
+
+    position:relative;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    justify-content:flex-start;
+
+    padding:35px 20px;
+
+    gap:0;
+
+    overflow-x:auto;
+
+}
+
+
+
+#result:before {
+
+    content:"";
+
+    position:absolute;
+
+    left:60px;
+
+    right:60px;
+
+    top:48px;
+
+    height:4px;
+
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff4655,
+            rgba(255,70,85,.25)
+        );
+
+
+    border-radius:20px;
+
+}
+
+
+
+
+.milestone {
+
+    min-width:180px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+
+
+    animation:
+
+        slideIn .5s ease;
+
+}
+
+
+
+.dot {
+
+    margin:auto;
+
+
+    width:26px;
+
+    height:26px;
+
+
+    border-radius:50%;
+
+
+    background:#ff4655;
+
+
+    border:
+
+        4px solid #140609;
+
+
+    box-shadow:
+
+        0 0 18px
+        #ff4655;
+
+
+    animation:
+
+        pulse 2s infinite;
+
+}
+
+
+
+
+.milestone h3 {
+
+    margin-top:15px;
+
+    margin-bottom:8px;
+
+
+    font-size:17px;
+
+
+    color:white;
+
+}
+
+
+
+.milestone p {
+
+    margin:0;
+
+
+    color:#ccc;
+
+
+    font-size:13px;
+
+
+    line-height:1.5;
+
+}
+
+
+
+/* SCROLLBAR */
+
+
+#result::-webkit-scrollbar {
+
+    height:8px;
+
+}
+
+
+#result::-webkit-scrollbar-thumb {
+
+    background:#ff4655;
+
+    border-radius:10px;
+
+}
+
+
+
+
+
+
+/* ANIMATIONS */
+
+
+@keyframes pulse {
+
+
+    50% {
+
+        transform:
+
+            scale(1.25);
+
+    }
+
+
+}
+
+
+
+@keyframes fadeUp {
+
+
+    from {
+
+        opacity:0;
+
+        transform:
+
+            translateY(25px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:
+
+            translateY(0);
+
+    }
+
+
+}
+
+
+
+
+@keyframes fadeDown {
+
+
+    from {
+
+        opacity:0;
+
+        transform:
+
+            translateY(-25px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:
+
+            translateY(0);
+
+    }
+
+
+}
+
+
+
+
+@keyframes slideIn {
+
+
+    from {
+
+        opacity:0;
+
+        transform:
+
+            translateX(-25px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:
+
+            translateX(0);
+
+    }
+
+
+}
+
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:800px){
+
+
+    body {
+
+        padding:
+
+            15px;
+
+    }
+
+
+
+    .container {
+
+
+        grid-template-columns:
+
+            1fr;
+
+
+    }
+
+
+
+    .timeline-card {
+
+
+        grid-column:
+
+            span 1;
+
+
+    }
+
+
+
+    h1 {
+
+        font-size:
+
+            30px;
+
+    }
+
+
+    h1 span {
+
+        font-size:
+
+            16px;
+
+    }
+
+
+}

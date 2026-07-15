@@ -1,70 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marvel Rivals Proficiency Calculator</title>
+
+<title>
+Marvel Rivals Proficiency Calculator
+</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
-<h1>Marvel Rivals Proficiency Calculator</h1>
 
-<h3>Enter your current proficiency</h3>
 
-<label>Hero:
-<select id="heroSelect"><option value="">Select Hero</option></select>
-</label><br><br>
+<h1>
+    MARVEL RIVALS
+    <span>PROFICIENCY TRACKER</span>
+</h1>
 
-<label>Proficiency Level:
-<input id="levelInput" type="number" min="1" max="70">
-</label><br><br>
 
-<label>Current Proficiency Points:
-<input id="pointsInput" type="number" min="0">
-</label><br><br>
 
-<label>Goal Level:
-<input id="goalInput" type="number" min="1" max="70">
-</label>
+<div class="container">
 
-<h3>Average Stats Per 10 Minutes</h3>
 
-<label>Objective 1 Stat:
-<select id="objective1Stat">
-<option value="healing">Healing</option>
-<option value="damage">Damage</option>
-<option value="damage_blocked">Damage Blocked</option>
-</select>
-</label>
-<br>
-<input id="objective1Value" type="number" placeholder="Amount per 10 min">
 
-<br><br>
+    <div class="card">
 
-<label>Objective 2 Stat:
-<select id="objective2Stat">
-<option value="final_hits">Final Hits</option>
-<option value="kos">KOs</option>
-<option value="ko_assists">KOs & Assists</option>
-</select>
-</label>
-<br>
-<input id="objective2Value" type="number" placeholder="Amount per 10 min">
+        <h2>
+            Hero Progress
+        </h2>
 
-<br><br>
 
-<label>Game Mode:
-<select id="modeSelect">
-<option value="qmComp">Quick Match / Competitive</option>
-<option value="arcade">Arcade</option>
-</select>
-</label>
+        <label>
+            Hero
 
-<br><br>
-<button id="calculateBtn">Calculate</button>
+            <select id="heroSelect">
+                <option value="">
+                    Select Hero
+                </option>
+            </select>
 
-<hr>
-<div id="result"></div>
+        </label>
+
+
+
+        <label>
+            Current Level
+
+            <input 
+                id="levelInput"
+                type="number"
+                min="1"
+                max="70"
+            >
+
+        </label>
+
+
+
+        <label>
+            Current Points
+
+            <input
+                id="pointsInput"
+                type="number"
+                min="0"
+            >
+
+        </label>
+
+
+
+        <label>
+            Goal Level
+
+            <input
+                id="goalInput"
+                type="number"
+                min="1"
+                max="70"
+            >
+
+        </label>
+
+
+    </div>
+
+
+
+
+
+
+    <div class="card">
+
+
+        <h2>
+            Match Stats
+        </h2>
+
+
+
+        <label>
+
+            Objective 1
+
+            <select id="objective1Stat">
+
+                <option value="healing">
+                    Healing
+                </option>
+
+                <option value="damage">
+                    Damage
+                </option>
+
+                <option value="block_damage">
+                    Damage Blocked
+                </option>
+
+
+            </select>
+
+        </label>
+
+
+
+        <input
+            id="objective1Value"
+            type="number"
+            placeholder="Amount per game"
+        >
+
+
+
+
+
+        <label>
+
+            Objective 2
+
+
+            <select id="objective2Stat">
+
+
+                <option value="final_hits">
+                    Final Hits
+                </option>
+
+
+                <option value="kos">
+                    KOs
+                </option>
+
+
+                <option value="ko_assists">
+                    KO Assists
+                </option>
+
+
+            </select>
+
+
+        </label>
+
+
+
+        <input
+            id="objective2Value"
+            type="number"
+            placeholder="Amount per game"
+        >
+
+
+
+
+
+
+        <label>
+
+            Mode
+
+
+            <select id="modeSelect">
+
+                <option value="qmComp">
+                    Quick Match / Competitive
+                </option>
+
+
+                <option value="arcade">
+                    Arcade
+                </option>
+
+
+            </select>
+
+
+        </label>
+
+
+
+
+
+        <button id="calculateBtn">
+
+            CALCULATE
+
+        </button>
+
+
+
+    </div>
+
+
+
+
+
+
+    <div class="card timeline-card">
+
+
+        <h2>
+            Progress Timeline
+        </h2>
+
+
+
+        <div id="result">
+
+            <p>
+                Enter your stats to see your journey.
+            </p>
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
 
 <script src="app.js"></script>
+
+
 </body>
+
 </html>

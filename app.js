@@ -1,21 +1,33 @@
 let data = {};
 
 async function loadData(){
+
     const response = await fetch("heroes.json");
+
     data = await response.json();
+
     populateHeroes();
+
 }
+
 
 
 function populateHeroes(){
 
-    const select = document.getElementById("heroSelect");
+    const select =
+        document.getElementById("heroSelect");
+
 
     Object.entries(data.heroes).forEach(([key, hero])=>{
 
-        const option = document.createElement("option");
+        const option =
+            document.createElement("option");
+
+
         option.value = key;
+
         option.textContent = hero.name;
+
 
         select.appendChild(option);
 
@@ -24,21 +36,33 @@ function populateHeroes(){
 }
 
 
+
+
 function getRank(level){
 
     for(const [rank, info] of Object.entries(data.progression.ranks)){
 
-        if(level >= info.levels[0] && level <= info.levels[1]){
+        if(
+            level >= info.levels[0] &&
+            level <= info.levels[1]
+        ){
+
             return rank;
+
         }
 
     }
 
+
     if(level >= 20){
+
         return "lord";
+
     }
 
 }
+
+
 
 
 
@@ -46,13 +70,18 @@ function pointsToReachLevel(level){
 
     let total = 0;
 
+
     for(let i = 1; i < level; i++){
 
         const rank = getRank(i);
 
-        total += data.progression.ranks[rank].pointsPerLevel;
+
+        total +=
+            data.progression.ranks[rank]
+            .pointsPerLevel;
 
     }
+
 
     return total;
 
@@ -61,25 +90,36 @@ function pointsToReachLevel(level){
 
 
 
-// Calculates how many times objectives are completed
-function calculateChallengePoints(hero, rank, stats){
+
+function calculateChallengeRewards(hero, rank, stats){
 
     let rewards = 0;
 
+
     Object.values(hero.challenges).forEach(challenge=>{
 
-        const playerStat = stats[challenge.type] || 0;
-        const requirement = challenge[rank];
+
+        const value =
+            stats[challenge.type] || 0;
+
+
+        const requirement =
+            challenge[rank];
+
+
 
         if(requirement > 0){
 
-            rewards += Math.floor(
-                playerStat / requirement
-            );
+            rewards +=
+                Math.floor(
+                    value / requirement
+                );
 
         }
 
+
     });
+
 
     return rewards;
 
@@ -89,48 +129,230 @@ function calculateChallengePoints(hero, rank, stats){
 
 
 
-function calculate(){
+function getPointsPerGame(rank, rewards){
 
-    const level = Number(
-        document.getElementById("levelInput").value
+    const rewardData =
+        data.ranks[rank];
+
+
+    return (
+
+        rewardData.usagePoints +
+
+        rewards *
+        rewardData.objectivePoints
+
     );
 
-    const currentPoints = Number(
-        document.getElementById("pointsInput").value
-    );
-
-    const goal = Number(
-        document.getElementById("goalInput").value
-    );
+}
 
 
-    const hero = data.heroes[
-        document.getElementById("heroSelect").value
+
+
+
+function formatTime(minutes){
+
+    const hours =
+        Math.floor(minutes / 60);
+
+
+    const mins =
+        minutes % 60;
+
+
+
+    if(hours === 0){
+
+        return `${mins}m`;
+
+    }
+
+
+    return `${hours}h ${mins}m`;
+
+}
+
+
+
+
+
+
+
+function createTimeline(
+    currentLevel,
+    goalLevel,
+    pointsPerGame
+){
+
+
+    const milestones = [
+
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        50,
+        60,
+        70
+
     ];
 
 
-    if(!level || !goal || !hero){
+
+    let html = "";
+
+    let previousLevel = currentLevel;
+
+
+
+
+    milestones.forEach(level=>{
+
+
+        if(
+            level > currentLevel &&
+            level <= goalLevel
+        ){
+
+
+
+            const pointsNeeded =
+
+                pointsToReachLevel(level)
+                -
+                pointsToReachLevel(previousLevel);
+
+
+
+
+
+            const games = Math.ceil(
+
+                pointsNeeded /
+                pointsPerGame
+
+            );
+
+
+
+
+            const hours =
+
+                formatTime(
+                    games * 10
+                );
+
+
+
+
+
+
+            html += `
+
+
+            <div class="milestone">
+
+
+                <div class="dot"></div>
+
+
+                <h3>
+                    LEVEL ${level}
+                </h3>
+
+
+                <p>
+
+                    ${previousLevel} → ${level}
+
+                    <br><br>
+
+                    ${hours}
+
+                </p>
+
+
+            </div>
+
+
+            `;
+
+
+
+            previousLevel = level;
+
+
+        }
+
+
+    });
+
+
+
+    return html;
+
+}
+
+
+
+
+
+
+
+
+function calculate(){
+
+
+    const level =
+        Number(
+            document.getElementById("levelInput").value
+        );
+
+
+
+    const goal =
+        Number(
+            document.getElementById("goalInput").value
+        );
+
+
+
+    const hero =
+        data.heroes[
+            document.getElementById("heroSelect").value
+        ];
+
+
+
+    if(!hero || !level || !goal){
+
         return;
+
     }
 
 
 
-    const rank = getRank(level);
 
-    const progressionData = data.progression.ranks[rank];
+    const rank =
+        getRank(level);
 
-    const rewardData = data.ranks[rank];
 
 
 
 
     const stats = {};
 
+
+
     stats[
         document.getElementById("objective1Stat").value
     ] = Number(
         document.getElementById("objective1Value").value
     );
+
 
 
     stats[
@@ -143,105 +365,83 @@ function calculate(){
 
 
 
-    const objectiveRewards = calculateChallengePoints(
-        hero,
-        rank,
-        stats
-    );
 
 
+    const rewards =
 
-
-
-    let usagePoints = 0;
-    let objectivePoints = 0;
-
-
-
-    // Agent - Centurion
-    if(rank !== "lord"){
-
-        usagePoints = rewardData.usagePoints;
-        objectivePoints = rewardData.objectivePoints;
-
-    }
-
-
-    // Lord
-    else{
-
-        if(
-            document.getElementById("modeSelect").value === "arcade"
-        ){
-
-            usagePoints = rewardData.arcade.usagePoints;
-            objectivePoints = rewardData.arcade.objectivePoints;
-
-        }
-
-        else{
-
-            usagePoints = rewardData.qmComp.usagePoints;
-            objectivePoints = rewardData.qmComp.objectivePoints;
-
-        }
-
-    }
-
-
-
-
-
-    const currentTotal =
-        pointsToReachLevel(level) + currentPoints;
-
-
-
-    const remaining =
-        Math.max(
-            0,
-            pointsToReachLevel(goal) - currentTotal
+        calculateChallengeRewards(
+            hero,
+            rank,
+            stats
         );
 
 
 
+
+
+
     const pointsPerGame =
-        usagePoints +
-        (objectiveRewards * objectivePoints);
+
+        getPointsPerGame(
+            rank,
+            rewards
+        );
 
 
 
-    const games =
-        pointsPerGame > 0
-        ? Math.ceil(remaining / pointsPerGame)
-        : 0;
 
 
 
-    document.getElementById("result").innerHTML = `
 
-        <h2>${rank.toUpperCase()}</h2>
+    const timeline =
 
-        <p>Points needed: ${remaining}</p>
+        createTimeline(
+            level,
+            goal,
+            pointsPerGame
+        );
 
-        <p>Objective rewards earned: ${objectiveRewards}</p>
 
-        <p>Estimated points per game: ${pointsPerGame}</p>
 
-        <p>Games needed: ${games}</p>
 
-        <p>Estimated time: ${(games * 10 / 60).toFixed(1)} hours</p>
+
+
+    document.getElementById("result")
+    .innerHTML = `
+
+
+        <p>
+            Rank:
+            <b>${rank.toUpperCase()}</b>
+        </p>
+
+
+        <p>
+            Points/Game:
+            <b>${pointsPerGame}</b>
+        </p>
+
+
+        ${timeline}
+
 
     `;
+
 
 }
 
 
 
 
+
 document
     .getElementById("calculateBtn")
-    .addEventListener("click", calculate);
+    .addEventListener(
+        "click",
+        calculate
+    );
+
+
 
 
 
