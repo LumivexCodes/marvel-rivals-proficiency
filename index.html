@@ -1,100 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Marvel Rivals Proficiency Calculator</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marvel Rivals Proficiency Calculator</title>
 </head>
-
-
 <body>
+<h1>Marvel Rivals Proficiency Calculator</h1>
 
+<h3>Enter your current proficiency</h3>
 
-<h1>
-    Marvel Rivals Proficiency Calculator
-</h1>
-
-
-<h3>
-    Enter your current proficiency
-</h3>
-
-
-<label>
-    Hero:
-    <select id="heroSelect">
-        <option value="">
-            Select Hero
-        </option>
-    </select>
+<label>Hero:
+<select id="heroSelect">
+<option value="">Select Hero</option>
+</select>
 </label>
 
-
 <br><br>
-
-
-<label>
-    Proficiency Level:
-    <input 
-        id="levelInput"
-        type="number"
-        min="1"
-        max="70"
-    >
+<label>Proficiency Level:
+<input id="levelInput" type="number" min="1" max="70">
 </label>
 
-
 <br><br>
-
-
-<label>
-    Current Proficiency Points:
-    <input
-        id="pointsInput"
-        type="number"
-        min="0"
-    >
+<label>Current Proficiency Points:
+<input id="pointsInput" type="number" min="0">
 </label>
 
-
 <br><br>
-
-
-<label>
-    Goal Level:
-    <input
-        id="goalInput"
-        type="number"
-        min="1"
-        max="70"
-    >
+<label>Goal Level:
+<input id="goalInput" type="number" min="1" max="70">
 </label>
 
+<h3>Average Stats Per 10 Minutes</h3>
+
+<label>Damage:
+<input id="damageInput" type="number">
+</label><br><br>
+
+<label>Healing:
+<input id="healingInput" type="number">
+</label><br><br>
+
+<label>Damage Blocked:
+<input id="blockedInput" type="number">
+</label><br><br>
+
+<label>KOs:
+<input id="kosInput" type="number">
+</label><br><br>
+
+<label>Final Hits:
+<input id="finalHitsInput" type="number">
+</label><br><br>
+
+<label>KO Assists:
+<input id="assistsInput" type="number">
+</label><br><br>
+
+<label>Game Mode:
+<select id="modeSelect">
+<option value="qmComp">Quick Match / Competitive</option>
+<option value="arcade">Arcade</option>
+</select>
+</label>
 
 <br><br>
-
-
-<button id="calculateBtn">
-    Calculate
-</button>
-
+<button id="calculateBtn">Calculate</button>
 
 <hr>
-
-
-<div id="result">
-
-</div>
-
-
+<div id="result"></div>
 
 <script src="app.js"></script>
-
-
 </body>
-
 </html>
