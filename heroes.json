@@ -7,6 +7,35 @@
     "arcadeDailyLimit": 15
   },
 
+ "progression": {
+  "ranks": {
+    "agent": {
+      "levels": [1,4],
+      "pointsPerLevel": 125,
+      "pointsToNextRank": 500,
+      "totalPointsRequired": 500
+    },
+    "knight": {
+      "levels": [5,9],
+      "pointsPerLevel": 240,
+      "pointsToNextRank": 1200,
+      "totalPointsRequired": 1700
+    },
+    "captain": {
+      "levels": [10,14],
+      "pointsPerLevel": 400,
+      "pointsToNextRank": 2000,
+      "totalPointsRequired": 3700
+    },
+    "centurion": {
+      "levels": [15,19],
+      "pointsPerLevel": 480,
+      "pointsToNextRank": 2400,
+      "totalPointsRequired": 6100
+    }
+  }
+},
+
   "ranks": {
     "agent": {
       "levels": [1, 4],
@@ -41,7 +70,7 @@
     }
   },
 
-  "heroes": {"heroes": {
+  "heroes": {
   "adam_warlock": {
     "name": "Adam Warlock",
     "challenges": {
@@ -1154,6 +1183,5 @@
       }
     }
   }
-}
 }
 }
