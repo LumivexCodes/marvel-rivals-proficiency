@@ -1,0 +1,1159 @@
+{
+  "meta": {
+    "game": "Marvel Rivals",
+    "system": "Hero Proficiency",
+    "resetTime": "19:00",
+    "timezone": "AEST",
+    "arcadeDailyLimit": 15
+  },
+
+  "ranks": {
+    "agent": {
+      "levels": [1, 4],
+      "usagePoints": 20,
+      "objectivePoints": 7
+    },
+    "knight": {
+      "levels": [5, 9],
+      "usagePoints": 20,
+      "objectivePoints": 13
+    },
+    "captain": {
+      "levels": [10, 14],
+      "usagePoints": 20,
+      "objectivePoints": 20
+    },
+    "centurion": {
+      "levels": [15, 19],
+      "usagePoints": 20,
+      "objectivePoints": 26
+    },
+    "lord": {
+      "levels": [20, 70],
+      "qmComp": {
+        "usagePoints": 60,
+        "objectivePoints": 80
+      },
+      "arcade": {
+        "usagePoints": 45,
+        "objectivePoints": 60
+      }
+    }
+  },
+
+  "heroes": {"heroes": {
+  "adam_warlock": {
+    "name": "Adam Warlock",
+    "challenges": {
+      "objective1": {
+        "type": "healing",
+        "agent": 5400,
+        "knight": 11000,
+        "captain": 16000,
+        "centurion": 21000,
+        "lord": 21000
+      },
+      "objective2": {
+        "type": "ko_assists",
+        "agent": 13,
+        "knight": 26,
+        "captain": 38,
+        "centurion": 51,
+        "lord": 51
+      }
+    }
+  },
+
+  "angela": {
+    "name": "Angela",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 7500,
+        "knight": 15000,
+        "captain": 22000,
+        "centurion": 30000,
+        "lord": 30000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 6,
+        "knight": 13,
+        "captain": 19,
+        "centurion": 25,
+        "lord": 25
+      }
+    }
+  },
+
+  "black_cat": {
+    "name": "Black Cat",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 3700,
+        "knight": 7500,
+        "captain": 11000,
+        "centurion": 15000,
+        "lord": 15000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+
+  "black_panther": {
+    "name": "Black Panther",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 3700,
+        "knight": 7500,
+        "captain": 11000,
+        "centurion": 15000,
+        "lord": 15000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+
+  "black_widow": {
+    "name": "Black Widow",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 3100,
+        "knight": 6200,
+        "captain": 9200,
+        "centurion": 12000,
+        "lord": 12000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+
+  "blade": {
+    "name": "Blade",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 5100,
+        "knight": 10000,
+        "captain": 15000,
+        "centurion": 20000,
+        "lord": 20000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+    "hulk": {
+    "name": "Bruce Banner / Hulk",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 10000,
+        "knight": 21000,
+        "captain": 31000,
+        "centurion": 42000,
+        "lord": 42000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 5,
+        "knight": 11,
+        "captain": 16,
+        "centurion": 22,
+        "lord": 22
+      }
+    }
+  },
+
+  "captain_america": {
+    "name": "Captain America",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 9000,
+        "knight": 18000,
+        "captain": 27000,
+        "centurion": 36000,
+        "lord": 36000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 6,
+        "knight": 13,
+        "captain": 19,
+        "centurion": 25,
+        "lord": 25
+      }
+    }
+  },
+
+  "cloak_and_dagger": {
+    "name": "Cloak & Dagger",
+    "challenges": {
+      "objective1": {
+        "type": "healing",
+        "agent": 5400,
+        "knight": 11000,
+        "captain": 16000,
+        "centurion": 21000,
+        "lord": 21000
+      },
+      "objective2": {
+        "type": "ko_assists",
+        "agent": 15,
+        "knight": 30,
+        "captain": 45,
+        "centurion": 60,
+        "lord": 60
+      }
+    }
+  },
+
+  "cyclops": {
+    "name": "Cyclops",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 5700,
+        "knight": 11000,
+        "captain": 17000,
+        "centurion": 23000,
+        "lord": 23000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 6,
+        "knight": 11,
+        "captain": 17,
+        "centurion": 23,
+        "lord": 23
+      }
+    }
+  },
+
+  "daredevil": {
+    "name": "Daredevil",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 3700,
+        "knight": 7500,
+        "captain": 11000,
+        "centurion": 15000,
+        "lord": 15000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+
+  "deadpool": {
+    "name": "Deadpool",
+    "challenges": {
+      "objective1": {
+        "type": "damage_healing",
+        "agent": 5700,
+        "knight": 11000,
+        "captain": 17000,
+        "centurion": 23000,
+        "lord": 23000
+      },
+      "objective2": {
+        "type": "ko_assists",
+        "agent": 15,
+        "knight": 30,
+        "captain": 45,
+        "centurion": 60,
+        "lord": 60
+      }
+    }
+  },
+
+  "devil_dinosaur": {
+    "name": "Devil Dinosaur",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 14000,
+        "knight": 27000,
+        "captain": 41000,
+        "centurion": 55000,
+        "lord": 55000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 7,
+        "knight": 15,
+        "captain": 22,
+        "centurion": 29,
+        "lord": 29
+      }
+    }
+  },  "doctor_strange": {
+    "name": "Doctor Strange",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 10000,
+        "knight": 21000,
+        "captain": 31000,
+        "centurion": 42000,
+        "lord": 42000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 6,
+        "knight": 13,
+        "captain": 19,
+        "centurion": 25,
+        "lord": 25
+      }
+    }
+  },
+
+  "elsa_bloodstone": {
+    "name": "Elsa Bloodstone",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 5700,
+        "knight": 11000,
+        "captain": 17000,
+        "centurion": 23000,
+        "lord": 23000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 6,
+        "knight": 11,
+        "captain": 17,
+        "centurion": 23,
+        "lord": 23
+      }
+    }
+  },
+
+  "emma_frost": {
+    "name": "Emma Frost",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 10000,
+        "knight": 21000,
+        "captain": 31000,
+        "centurion": 42000,
+        "lord": 42000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 7,
+        "knight": 15,
+        "captain": 22,
+        "centurion": 29,
+        "lord": 29
+      }
+    }
+  },
+
+  "gambit": {
+    "name": "Gambit",
+    "challenges": {
+      "objective1": {
+        "type": "healing",
+        "agent": 4500,
+        "knight": 9100,
+        "captain": 14000,
+        "centurion": 18000,
+        "lord": 18000
+      },
+      "objective2": {
+        "type": "ko_assists",
+        "agent": 15,
+        "knight": 30,
+        "captain": 45,
+        "centurion": 60,
+        "lord": 60
+      }
+    }
+  },
+
+  "groot": {
+    "name": "Groot",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 14000,
+        "knight": 27000,
+        "captain": 41000,
+        "centurion": 55000,
+        "lord": 55000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 6,
+        "knight": 13,
+        "captain": 19,
+        "centurion": 25,
+        "lord": 25
+      }
+    }
+  },
+
+  "hawkeye": {
+    "name": "Hawkeye",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 5100,
+        "knight": 10000,
+        "captain": 15000,
+        "centurion": 20000,
+        "lord": 20000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 6,
+        "knight": 11,
+        "captain": 17,
+        "centurion": 23,
+        "lord": 23
+      }
+    }
+  },
+
+  "hela": {
+    "name": "Hela",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 5700,
+        "knight": 11000,
+        "captain": 17000,
+        "centurion": 23000,
+        "lord": 23000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 7,
+        "knight": 13,
+        "captain": 19,
+        "centurion": 25,
+        "lord": 25
+      }
+    }
+  },  "human_torch": {
+    "name": "Human Torch",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 4400,
+        "knight": 8800,
+        "captain": 13000,
+        "centurion": 18000,
+        "lord": 18000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 4,
+        "knight": 8,
+        "captain": 12,
+        "centurion": 17,
+        "lord": 17
+      }
+    }
+  },
+
+  "invisible_woman": {
+    "name": "Invisible Woman",
+    "challenges": {
+      "objective1": {
+        "type": "healing",
+        "agent": 5400,
+        "knight": 11000,
+        "captain": 16000,
+        "centurion": 21000,
+        "lord": 21000
+      },
+      "objective2": {
+        "type": "ko_assists",
+        "agent": 15,
+        "knight": 30,
+        "captain": 45,
+        "centurion": 60,
+        "lord": 60
+      }
+    }
+  },
+
+  "iron_fist": {
+    "name": "Iron Fist",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 3100,
+        "knight": 6200,
+        "captain": 9200,
+        "centurion": 12000,
+        "lord": 12000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 4,
+        "knight": 8,
+        "captain": 12,
+        "centurion": 17,
+        "lord": 17
+      }
+    }
+  },
+
+  "iron_man": {
+    "name": "Iron Man",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 4400,
+        "knight": 8800,
+        "captain": 13000,
+        "centurion": 18000,
+        "lord": 18000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 4,
+        "knight": 8,
+        "captain": 12,
+        "centurion": 17,
+        "lord": 17
+      }
+    }
+  },
+
+  "jeff_the_land_shark": {
+    "name": "Jeff the Land Shark",
+    "challenges": {
+      "objective1": {
+        "type": "healing",
+        "agent": 5400,
+        "knight": 11000,
+        "captain": 16000,
+        "centurion": 21000,
+        "lord": 21000
+      },
+      "objective2": {
+        "type": "ko_assists",
+        "agent": 13,
+        "knight": 26,
+        "captain": 38,
+        "centurion": 51,
+        "lord": 51
+      }
+    }
+  },
+
+  "loki": {
+    "name": "Loki",
+    "challenges": {
+      "objective1": {
+        "type": "healing",
+        "agent": 5400,
+        "knight": 11000,
+        "captain": 16000,
+        "centurion": 21000,
+        "lord": 21000
+      },
+      "objective2": {
+        "type": "ko_assists",
+        "agent": 15,
+        "knight": 30,
+        "captain": 45,
+        "centurion": 60,
+        "lord": 60
+      }
+    }
+  },
+
+  "luna_snow": {
+    "name": "Luna Snow",
+    "challenges": {
+      "objective1": {
+        "type": "healing",
+        "agent": 6200,
+        "knight": 12000,
+        "captain": 18000,
+        "centurion": 25000,
+        "lord": 25000
+      },
+      "objective2": {
+        "type": "ko_assists",
+        "agent": 15,
+        "knight": 30,
+        "captain": 45,
+        "centurion": 60,
+        "lord": 60
+      }
+    }
+  },
+
+  "magik": {
+    "name": "Magik",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 4400,
+        "knight": 8800,
+        "captain": 13000,
+        "centurion": 18000,
+        "lord": 18000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+
+  "magneto": {
+    "name": "Magneto",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 9000,
+        "knight": 18000,
+        "captain": 27000,
+        "centurion": 36000,
+        "lord": 36000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 7,
+        "knight": 15,
+        "captain": 22,
+        "centurion": 29,
+        "lord": 29
+      }
+    }
+  },
+
+  "mantis": {
+    "name": "Mantis",
+    "challenges": {
+      "objective1": {
+        "type": "healing",
+        "agent": 5400,
+        "knight": 11000,
+        "captain": 16000,
+        "centurion": 21000,
+        "lord": 21000
+      },
+      "objective2": {
+        "type": "ko_assists",
+        "agent": 17,
+        "knight": 35,
+        "captain": 52,
+        "centurion": 70,
+        "lord": 70
+      }
+    }
+  },  "mister_fantastic": {
+    "name": "Mister Fantastic",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 5100,
+        "knight": 10000,
+        "captain": 15000,
+        "centurion": 20000,
+        "lord": 20000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+
+  "moon_knight": {
+    "name": "Moon Knight",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 4400,
+        "knight": 8800,
+        "captain": 13000,
+        "centurion": 18000,
+        "lord": 18000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 4,
+        "knight": 8,
+        "captain": 12,
+        "centurion": 17,
+        "lord": 17
+      }
+    }
+  },
+
+  "namor": {
+    "name": "Namor",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 5100,
+        "knight": 10000,
+        "captain": 15000,
+        "centurion": 20000,
+        "lord": 20000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 4,
+        "knight": 8,
+        "captain": 12,
+        "centurion": 17,
+        "lord": 17
+      }
+    }
+  },
+
+  "peni_parker": {
+    "name": "Peni Parker",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 7500,
+        "knight": 15000,
+        "captain": 22000,
+        "centurion": 30000,
+        "lord": 30000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 7,
+        "knight": 15,
+        "captain": 22,
+        "centurion": 29,
+        "lord": 29
+      }
+    }
+  },
+
+  "phoenix": {
+    "name": "Phoenix",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 5700,
+        "knight": 11000,
+        "captain": 17000,
+        "centurion": 23000,
+        "lord": 23000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 7,
+        "knight": 13,
+        "captain": 19,
+        "centurion": 25,
+        "lord": 25
+      }
+    }
+  },
+
+  "psylocke": {
+    "name": "Psylocke",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 3700,
+        "knight": 7500,
+        "captain": 11000,
+        "centurion": 15000,
+        "lord": 15000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+
+  "rocket_raccoon": {
+    "name": "Rocket Raccoon",
+    "challenges": {
+      "objective1": {
+        "type": "healing",
+        "agent": 5400,
+        "knight": 11000,
+        "captain": 16000,
+        "centurion": 21000,
+        "lord": 21000
+      },
+      "objective2": {
+        "type": "ko_assists",
+        "agent": 15,
+        "knight": 30,
+        "captain": 45,
+        "centurion": 60,
+        "lord": 60
+      }
+    }
+  },
+
+  "rogue": {
+    "name": "Rogue",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 9000,
+        "knight": 18000,
+        "captain": 27000,
+        "centurion": 36000,
+        "lord": 36000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 6,
+        "knight": 13,
+        "captain": 19,
+        "centurion": 25,
+        "lord": 25
+      }
+    }
+  },  "scarlet_witch": {
+    "name": "Scarlet Witch",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 3700,
+        "knight": 7500,
+        "captain": 11000,
+        "centurion": 15000,
+        "lord": 15000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+
+  "spider_man": {
+    "name": "Spider-Man",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 3100,
+        "knight": 6200,
+        "captain": 9200,
+        "centurion": 12000,
+        "lord": 12000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 4,
+        "knight": 8,
+        "captain": 12,
+        "centurion": 17,
+        "lord": 17
+      }
+    }
+  },
+
+  "squirrel_girl": {
+    "name": "Squirrel Girl",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 5100,
+        "knight": 10000,
+        "captain": 15000,
+        "centurion": 20000,
+        "lord": 20000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+
+  "star_lord": {
+    "name": "Star-Lord",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 4400,
+        "knight": 8800,
+        "captain": 13000,
+        "centurion": 18000,
+        "lord": 18000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+
+  "storm": {
+    "name": "Storm",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 4400,
+        "knight": 8800,
+        "captain": 13000,
+        "centurion": 18000,
+        "lord": 18000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+
+  "the_punisher": {
+    "name": "The Punisher",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 5100,
+        "knight": 10000,
+        "captain": 15000,
+        "centurion": 20000,
+        "lord": 20000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  },
+
+  "the_thing": {
+    "name": "The Thing",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 10000,
+        "knight": 21000,
+        "captain": 31000,
+        "centurion": 42000,
+        "lord": 42000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 7,
+        "knight": 15,
+        "captain": 22,
+        "centurion": 29,
+        "lord": 29
+      }
+    }
+  },
+
+  "thor": {
+    "name": "Thor",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 9000,
+        "knight": 18000,
+        "captain": 27000,
+        "centurion": 36000,
+        "lord": 36000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 6,
+        "knight": 13,
+        "captain": 19,
+        "centurion": 25,
+        "lord": 25
+      }
+    }
+  },
+
+  "ultron": {
+    "name": "Ultron",
+    "challenges": {
+      "objective1": {
+        "type": "healing",
+        "agent": 5400,
+        "knight": 11000,
+        "captain": 16000,
+        "centurion": 21000,
+        "lord": 21000
+      },
+      "objective2": {
+        "type": "ko_assists",
+        "agent": 17,
+        "knight": 35,
+        "captain": 52,
+        "centurion": 70,
+        "lord": 70
+      }
+    }
+  },
+
+  "venom": {
+    "name": "Venom",
+    "challenges": {
+      "objective1": {
+        "type": "block_damage",
+        "agent": 10000,
+        "knight": 21000,
+        "captain": 31000,
+        "centurion": 42000,
+        "lord": 42000
+      },
+      "objective2": {
+        "type": "kos",
+        "agent": 6,
+        "knight": 13,
+        "captain": 19,
+        "centurion": 25,
+        "lord": 25
+      }
+    }
+  },
+
+  "white_fox": {
+    "name": "White Fox",
+    "challenges": {
+      "objective1": {
+        "type": "healing",
+        "agent": 5400,
+        "knight": 11000,
+        "captain": 16000,
+        "centurion": 21000,
+        "lord": 21000
+      },
+      "objective2": {
+        "type": "ko_assists",
+        "agent": 15,
+        "knight": 30,
+        "captain": 45,
+        "centurion": 60,
+        "lord": 60
+      }
+    }
+  },
+
+  "winter_soldier": {
+    "name": "Winter Soldier",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 3700,
+        "knight": 7500,
+        "captain": 11000,
+        "centurion": 15000,
+        "lord": 15000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 4,
+        "knight": 8,
+        "captain": 12,
+        "centurion": 17,
+        "lord": 17
+      }
+    }
+  },
+
+  "wolverine": {
+    "name": "Wolverine",
+    "challenges": {
+      "objective1": {
+        "type": "damage",
+        "agent": 4400,
+        "knight": 8800,
+        "captain": 13000,
+        "centurion": 18000,
+        "lord": 18000
+      },
+      "objective2": {
+        "type": "final_hits",
+        "agent": 5,
+        "knight": 10,
+        "captain": 15,
+        "centurion": 20,
+        "lord": 20
+      }
+    }
+  }
+}
+}
+}
