@@ -11,51 +11,46 @@
 <h3>Enter your current proficiency</h3>
 
 <label>Hero:
-<select id="heroSelect">
-<option value="">Select Hero</option>
-</select>
-</label>
+<select id="heroSelect"><option value="">Select Hero</option></select>
+</label><br><br>
 
-<br><br>
 <label>Proficiency Level:
 <input id="levelInput" type="number" min="1" max="70">
-</label>
+</label><br><br>
 
-<br><br>
 <label>Current Proficiency Points:
 <input id="pointsInput" type="number" min="0">
-</label>
+</label><br><br>
 
-<br><br>
 <label>Goal Level:
 <input id="goalInput" type="number" min="1" max="70">
 </label>
 
 <h3>Average Stats Per 10 Minutes</h3>
 
-<label>Damage:
-<input id="damageInput" type="number">
-</label><br><br>
+<label>Objective 1 Stat:
+<select id="objective1Stat">
+<option value="healing">Healing</option>
+<option value="damage">Damage</option>
+<option value="damage_blocked">Damage Blocked</option>
+</select>
+</label>
+<br>
+<input id="objective1Value" type="number" placeholder="Amount per 10 min">
 
-<label>Healing:
-<input id="healingInput" type="number">
-</label><br><br>
+<br><br>
 
-<label>Damage Blocked:
-<input id="blockedInput" type="number">
-</label><br><br>
+<label>Objective 2 Stat:
+<select id="objective2Stat">
+<option value="final_hits">Final Hits</option>
+<option value="kos">KOs</option>
+<option value="ko_assists">KOs & Assists</option>
+</select>
+</label>
+<br>
+<input id="objective2Value" type="number" placeholder="Amount per 10 min">
 
-<label>KOs:
-<input id="kosInput" type="number">
-</label><br><br>
-
-<label>Final Hits:
-<input id="finalHitsInput" type="number">
-</label><br><br>
-
-<label>KO Assists:
-<input id="assistsInput" type="number">
-</label><br><br>
+<br><br>
 
 <label>Game Mode:
 <select id="modeSelect">
