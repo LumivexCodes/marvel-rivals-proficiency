@@ -6,11 +6,11 @@
 - [x] Researched Marvel Rivals Hero Proficiency system
 - [x] Recorded proficiency rank progression
 - [x] Recorded points per level:
-  - Agent (LV1-4): 125
-  - Knight (LV5-9): 240
-  - Captain (LV10-14): 400
-  - Centurion (LV15-19): 480
-  - Lord+ (LV20+): 1600+
+  - [x] Agent (LV1-4): 125
+  - [x] Knight (LV5-9): 240
+  - [x] Captain (LV10-14): 400
+  - [x] Centurion (LV15-19): 480
+  - [x] Lord+ (LV20+): 1600+
 - [x] Recorded QM/Comp/Arcade point rewards
 - [x] Recorded all hero proficiency challenges
 - [x] Converted hero data into JSON format
@@ -34,9 +34,9 @@
 
 ## Calculator Improvements
 
-- [ ] Display current rank automatically
+- [x] Display current rank automatically
 - [ ] Display progress percentage
-- [ ] Show points earned per match depending on rank
+- [x] Show points earned per match depending on rank
 - [ ] Add QM/Comp/Arcade selection
 - [ ] Add Arcade daily limit tracking (15 games)
 
@@ -47,7 +47,7 @@
 
 Allow users to select:
 
-- [ ] Hero
+- [x] Hero
 - [ ] Game mode:
   - [ ] Quick Match
   - [ ] Competitive
@@ -55,10 +55,10 @@ Allow users to select:
 
 Then calculate:
 
-- [ ] Points gained from hero usage
-- [ ] Points gained from objective 1
-- [ ] Points gained from objective 2
-- [ ] Total points per game
+- [x] Points gained from hero usage
+- [x] Points gained from objective 1
+- [x] Points gained from objective 2
+- [x] Total points per game
 
 
 ---
@@ -69,27 +69,27 @@ Add average performance input:
 
 Stats per 10 minutes:
 
-- [ ] Damage
-- [ ] Healing
-- [ ] Damage blocked
-- [ ] KOs
-- [ ] Final hits
-- [ ] KO assists
+- [x] Damage
+- [x] Healing
+- [x] Damage blocked
+- [x] KOs
+- [x] Final hits
+- [x] KO assists
 
 
 Use these to calculate:
 
-- [ ] Which objectives are completed automatically
-- [ ] Which objectives need multiple games
-- [ ] Estimated games required
+- [x] Which objectives are completed automatically
+- [x] Which objectives need multiple games
+- [x] Estimated games required
 
 
 ---
 
 ## Advanced Planner
 
-- [ ] Calculate total games needed to reach goal level
-- [ ] Calculate estimated time required
+- [x] Calculate total games needed to reach goal level
+- [x] Calculate estimated time required
 - [ ] Include daily Arcade cap
 - [ ] Estimate completion date
 - [ ] Allow changing reset time
@@ -100,11 +100,11 @@ Use these to calculate:
 
 ## UI Improvements
 
-- [ ] Add proper styling
-- [ ] Add Marvel Rivals theme
+- [x] Add proper styling
+- [x] Add Marvel Rivals theme
 - [ ] Add hero icons
 - [ ] Add rank badges
-- [ ] Mobile-friendly layout
+- [x] Mobile-friendly layout
 
 
 ---
