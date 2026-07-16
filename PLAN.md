@@ -115,4 +115,3 @@ Use these to calculate:
 - [ ] Track multiple heroes
 - [ ] Compare fastest heroes to level
 - [ ] Show optimal mode recommendation
-- [ ] Add season reset support
